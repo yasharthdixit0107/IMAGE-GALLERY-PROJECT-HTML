@@ -26,12 +26,26 @@
 
 .gallery{
     display: grid;
-   grid-template-columns: repeat(auto-fit, minmax (300px,1fr));
-    gap: 20px;
+    grid-auto-flow: column;
+    grid-auto-columns: min-content;
+    gap: 300px;
+    overflow: auto;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+
+}
+
+.gallery::-webkit-scrollbar{
+    height  8px;
+}
+
+.gallery::-webkit-scrollbar-thumb{
+    background-color: #888;
+    border-radius: 10px;
 }
 
 .card{
-    width: 32%;
+    width: 300px;
     position: relative;
     margin-bottom: 20px;
     border-radius: 10px;  /* by this we can make the round card corners */
@@ -47,7 +61,7 @@
 }
 
 .card:hover{
-    transform: scale(1.03);
+    transform: scale(2.05);
     filter: drop-shadow(0 0 10px #333);
     transition: 0.2s;
 }
