@@ -25,9 +25,9 @@
 }
 
 .gallery{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+   grid-template-columns: repeat(auto-fit, minmax (300px,1fr));
+    gap: 20px;
 }
 
 .card{
@@ -36,6 +36,7 @@
     margin-bottom: 20px;
     border-radius: 10px;  /* by this we can make the round card corners */
     overflow: hidden;
+    transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .card img{
